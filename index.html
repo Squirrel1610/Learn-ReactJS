@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+        // JSX render array
+        const courses = [
+            {id: 1, name: "React"},
+            {id: 2, name: "Node"},
+            {id: 3, name: "MongoDB"},
+            {id: 4, name: "Express"},
+            {id: 5, name: "JavaScript"},
+        ];
+
+        const ul = (
+            <ul>
+                {
+                    courses.map(course => <li key={course.id}>{course.name}</li>)
+                }
+            </ul>
+        );
+        */
+
+
+        /*
+        // không sinh ra thẻ div thừa
+        const jsx = (
+            <React.Fragment>
+                <h1>Heading1</h1>
+                <h2>Heading2</h2>
+            </React.Fragment>
+        )
+        */
+        
+
+        /*
+        //React element types: string / function / class
+        function Header() {
+            return (
+                <div className="header">Header</div>
+            )
+        }
+
+        class Content extends React.Component {
+            render() {
+                return (
+                    <div className="content">Content</div>
+                )
+            }
+        }
+
+        const jsx = (
+            <div className="wrapper">
+                <Header />  
+                <Content />
+            </div>
+        )
+        */
+
+
+    
+        /*
+            Props:
+            
+            - React elements: giống mấy thẻ html nhưng là jsx
+                - Sử dụng props giống ovwis attribute trong HTML
+                - 2 props class, for => className, htmlFor
+            - React component: functiom / class ví dự <PostItem />
+                - Sử dụng props giống như tham số của function
+                - Đặt tên props theo kiểu camelCase
+                - Prop "key" là prop đặc biệt
+        */
+
+        
+        const postList = [
+            {
+                id: 1,
+                title: "Title 1",
+                content: "Content 1",
+                published: "Time 1"
+            },
+            {
+                id: 2,
+                title: "Title 2",
+                content: "Content 2",
+                published: "Time 2"
+            },
+            {
+                id: 3,
+                title: "Title 3",
+                content: "Content 3",
+                published: "Time 3"
+            },
+        ]
+        
+        function PostItem({ postData }) {
+            return (
+                <div className="post-item">
+                    <img src="data:image/jpeg;base64,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" alt="" className="post-image"/>
+                    <h2 className="post-title" onClick={() => alert(postData.title)}>{postData.title}</h2>
+                    <p className="post-content">{postData.content}</p>
+                    <p className="post-published">{postData.published}</p>
+                </div>
+            )
+        }
+
+        function App() {
+            return (
+                <div className ="post-list">
+                    {
+                        postList.map(postItem => (
+                            <PostItem
+                                key={postItem.id}
+                                postData={postItem}
+                            />
+                        ))
+                    }
+                </div>
+            )
+        }
+    
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+</html>
