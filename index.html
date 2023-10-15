@@ -136,6 +136,7 @@
         }
         */
 
+        /*
         //DOM event
         function Button({ title, href, onClick }) {
             let Component = "button";
@@ -170,6 +171,33 @@
                 </div>
             )
         }
+        */
+
+        /*
+        //children prop
+        const cars = [
+            "Honda",
+            "BMW",
+            "Mercedes"
+        ]
+
+        function List({data, children}) {
+            console.log(children);
+            return (
+                <ul>
+                    {data.map((...props) => children(...props))}
+                </ul>
+            )
+        }
+
+        function App() {
+            return (
+                <List data={cars}>
+                    {(item, index) => <li key={index}>{item}</li>}
+                </List>
+            )
+        }
+        */
     
         const root = ReactDOM.createRoot(document.getElementById("root"));
         root.render(<App />);
