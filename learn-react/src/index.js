@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import LearnUseState from './learnUseState';
+import LearnUseState from './LearnUseState';
+import LearnUseEffect from './LearnUseEffect';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <LearnUseState />
+  <LearnUseEffect />
 );
 
 // If you want to start measuring performance in your app, pass a function
