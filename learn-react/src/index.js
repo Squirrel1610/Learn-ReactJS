@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LearnUseState from './LearnUseState';
 import LearnUseEffect from './LearnUseEffect';
+import LearnUseLayoutEffect from './LearnUseLayoutEffect';
+import LearnUseRef from './LearnUseRef';
+import LearnMemo from './LearnMemo';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <LearnUseEffect />
+  <LearnMemo />
 );
 
 // If you want to start measuring performance in your app, pass a function
