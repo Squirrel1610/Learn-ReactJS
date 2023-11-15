@@ -9,13 +9,16 @@ import { memo } from "react";
 
 
 
-function ContentMemo({count}) {
+function ContentMemo({onCount}) {
     console.log("re-render");
 
     return (
-        <div>
-            Hello AE {count}
-        </div>
+        <>
+            <div>
+                Hello AE
+            </div>
+            <button onClick={onCount}>Count</button>
+        </>
     )
 }
 

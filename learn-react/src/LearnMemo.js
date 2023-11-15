@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ContentMemo from "./ContentMemo";
 
 function LearnMemo() {
     const [count, setCount] = useState(0);
 
-    const handleCount = () => {
-        setCount(count + 1);
-    }
+    /*
+        memo + useCallback: giúp tránh việc re-render lại component khi state thay đổi
+    */
+    const handleCount = useCallback(() => {
+        setCount(prev => prev + 1);
+    }, [])
 
     return (
         <div>
-            <ContentMemo count={count} />
+            <ContentMemo onCount={handleCount} />
             <h1>{count}</h1>
-            <button onClick={handleCount}>Count</button>
         </div>
     )
 }

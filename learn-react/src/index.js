@@ -6,11 +6,12 @@ import LearnUseEffect from './LearnUseEffect';
 import LearnUseLayoutEffect from './LearnUseLayoutEffect';
 import LearnUseRef from './LearnUseRef';
 import LearnMemo from './LearnMemo';
+import LearnUseMemo from './LearnUseMemo';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <LearnMemo />
+  <LearnUseMemo />
 );
 
 // If you want to start measuring performance in your app, pass a function
