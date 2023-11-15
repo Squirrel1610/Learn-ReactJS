@@ -10,11 +10,15 @@ import LearnMemo from './LearnMemo';
 import LearnUseMemo from './LearnUseMemo';
 import LearnUseReducer from './LearnUseReducer';
 import TodoApp_Reducer from './TodoApp_Reducer/';
+import LearnUseContext from './LearnUseContext';
+import { ThemeProvider } from './LearnUseContext/ThemeContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <TodoApp_Reducer/>
+  <ThemeProvider>
+    <LearnUseContext />
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
