@@ -12,13 +12,18 @@ import LearnUseReducer from './LearnUseReducer';
 import TodoApp_Reducer from './TodoApp_Reducer/';
 import LearnUseContext from './LearnUseContext';
 import { ThemeProvider } from './LearnUseContext/ThemeContext';
-
+import { StoreProvider } from './TodoApp_GlobalState/store';
+import TodoApp_GlobalState from './TodoApp_GlobalState/TodoApp_GlobalState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider>
-    <LearnUseContext />
-  </ThemeProvider>
+  // <ThemeProvider>
+  //   <LearnUseContext />
+  // </ThemeProvider>
+
+  <StoreProvider>
+    <TodoApp_GlobalState />
+  </StoreProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
