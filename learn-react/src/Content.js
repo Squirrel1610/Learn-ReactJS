@@ -149,6 +149,7 @@ function Content () {
 
         //clean up
         return () => {
+            console.log("Unmounted")
             clearInterval(timerId);
         }
     }, [])
@@ -175,6 +176,7 @@ function Content () {
         const file = e.target.files[0];
         file.preview = URL.createObjectURL(file);
         setAvatar(file);
+        e.target.value = null;
     }
 
     return (
